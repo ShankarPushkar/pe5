@@ -34,5 +34,4 @@ public class SortedSetTest {
 
         assertEquals(expectedResult,actualResult);
     }
-
 }
