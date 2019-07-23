@@ -34,4 +34,8 @@ public class SortedSetTest {
 
         assertEquals(expectedResult,actualResult);
     }
+    @Test(expected = NullPointerException.class)
+    public void givenANullStringShouldNullPointerException(){
+        sortedSet.setSorter(null);
+    }
 }
