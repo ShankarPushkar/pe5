@@ -10,7 +10,7 @@ import java.util.Map;
 import static org.junit.Assert.*;
 
 public class MapWordCountTest {
-    MapWordCount mapWordCount;
+    private MapWordCount mapWordCount;
 
     @Before
     public void setUp() {
@@ -27,9 +27,13 @@ public class MapWordCountTest {
         String input="one one -one___two,,three,one @three*one?two";
         Map actualResult=mapWordCount.mapWordCounter(input);
         Map expectedResult=new HashMap();
-        expectedResult.put(5,"one");
-        expectedResult.put(2,"two");
-        expectedResult.put(2,"three");
-        assertEquals(actualResult,expectedResult);
+        expectedResult.put("one",5);
+        expectedResult.put("two",2);
+        expectedResult.put("three",2);
+        assertEquals(expectedResult,actualResult);
+    }
+    @Test(expected = NullPointerException.class)
+    public void givenAStringShouldNullPointerException(){
+        mapWordCount.mapWordCounter(null);
     }
 }
