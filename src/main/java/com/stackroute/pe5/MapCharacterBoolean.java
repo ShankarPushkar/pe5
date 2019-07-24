@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class MapCharacterBoolean {
     public Map mapCharacterCounter(String[] input) {
-        int[] count ={0,0,0,0,0};
+        int[] count ={0,0,0,0};
 
         for (int i = 0; i < input.length; i++) {
             switch (input[i]) {
@@ -25,7 +25,7 @@ public class MapCharacterBoolean {
         }
 
         Map sendBack = new HashMap();
-        for (int i = 0; i <count.length-1; i++) {
+        for (int i = 0; i <count.length; i++) {
             if(count[i]>1){
                 boolean flag=true;
                 sendBack.put(input[i],flag);
